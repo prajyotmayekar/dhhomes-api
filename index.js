@@ -292,15 +292,16 @@ var apartments_3 = [
 // });
 
 
-// app.get('/api/courses',verifyToken,(req,res)=>{
-//     jwt.verify(req.token,'secretkey',(err,authData)=>{
-//         if(err){
-//             res.sendStatus(403);
-//         }else{
-//             res.json({courses,authData})
-//         }
-//     })
-// })
+app.get('/api/courses',(req,res)=>{
+    res.json({'test':1})
+    // jwt.verify(req.token,'secretkey',(err,authData)=>{
+    //     if(err){
+    //         res.sendStatus(403);
+    //     }else{
+    //         res.json({courses,authData})
+    //     }
+    // })
+})
 
 app.get('/api/homepage-properties/:id',verifyToken,(req,res)=>{ 
     jwt.verify(req.token,'secretkey',(err,authData)=>{
@@ -438,7 +439,7 @@ function verifyToken(req,res,next){
     }
 }
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3018, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
